@@ -1,0 +1,31 @@
+/* 重置vantUI中下拉菜单标题的样式 */
+.van-dropdown-menu__title-size {
+    font-size: 0.37333rem;
+}
+
+/* 重置面板中内容的样式 品质管理-检验记录*/
+.van-swipe-cell-padding .van-collapse-item__content {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #f6f6f6;
+}
+
+.van-collapse_bottom .van-collapse-item__content {
+    padding: 0 0 0 10px;
+}
+
+.van-swipe-cell-padding .van-collapse-item__title,
+.van-swipe-cell-padding .van-collapse-item__title--expanded {
+    padding-left: 22px;
+}
+
+/* check框的大小 */
+.van-checkbox__icon,
+.van-checkbox__icon .van-icon {
+    width: 17px;
+    height: 17px;
+}
+
+.wrap--menu .van-dropdown-menu__item {
+    justify-content: left;
+}

@@ -1,0 +1,121 @@
+{
+  "id": "1431556",
+  "name": "wit-cloud-app",
+  "font_family": "iconfont",
+  "css_prefix_text": "iconfont-",
+  "description": "智云3.0手机端",
+  "glyphs": [
+    {
+      "icon_id": "688061",
+      "name": "撤销 返回 撤回 上一步",
+      "font_class": "chexiaofanhuichehuishangyibu",
+      "unicode": "e76b",
+      "unicode_decimal": 59243
+    },
+    {
+      "icon_id": "1271863",
+      "name": "用户头像",
+      "font_class": "yonghutouxiang",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "1789473",
+      "name": "时间维度",
+      "font_class": "shijianweidu",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "1854597",
+      "name": "符号-锁",
+      "font_class": "suo",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "3169582",
+      "name": "制作工序配置",
+      "font_class": "web-icon-",
+      "unicode": "e712",
+      "unicode_decimal": 59154
+    },
+    {
+      "icon_id": "3216611",
+      "name": "邮件",
+      "font_class": "youjian",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "4565339",
+      "name": "延时",
+      "font_class": "yanshi",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "5315866",
+      "name": "延期",
+      "font_class": "yanchi",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "6250267",
+      "name": "班组",
+      "font_class": "banzu",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "6486517",
+      "name": "时间",
+      "font_class": "shijian",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "6756281",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "7127384",
+      "name": "加载",
+      "font_class": "jiazai",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "8387659",
+      "name": "工单",
+      "font_class": "gongdan",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "9841778",
+      "name": "密码",
+      "font_class": "mima",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "10956652",
+      "name": "工作台",
+      "font_class": "gongzuotai",
+      "unicode": "e70a",
+      "unicode_decimal": 59146
+    },
+    {
+      "icon_id": "11029683",
+      "name": "库存分析",
+      "font_class": "kucunfenxi",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    }
+  ]
+}
