@@ -3,7 +3,7 @@
  * @Autor: anlythree
  * @Date: 2020-11-21 13:34:24
  * @LastEditors: anlythree
- * @LastEditTime: 2020-12-01 09:41:30
+ * @LastEditTime: 2020-12-01 19:46:48
 -->
 
 
@@ -22,8 +22,8 @@
         
     <div>
 
-        <van-cell-group>
-            <van-cell title="haha" value="hah" label="已运行3小时9分钟" />
+        <van-cell-group v-for="(item,index) in machineList" :key="index" >
+            <van-cell :title="item.machineName" :value="item.machineStatus" label="已运行3小时9分钟" :class="item.machineColorStatus" />
         </van-cell-group>
         
     </div>
@@ -50,27 +50,73 @@ export default {
       return{
           msg:'电脑横机列表视图',
           isLoading: false,
-          machineList: [{}]
+          machineList: []
       }
+  },
+  mounted:function () {
+      this.refreshList();
+      
+      setInterval(() => {
+            this.refreshList() // 刷新列表
+        }, 10000);
   },
   methods: {
     
-  refreshList() {
+  refreshList(data) {
     let _this = this;
     _this.$axios.post('/api/machine/machine/queryMachineInfo').then(response =>{
         let d = response.data;
         if(d.code == 0){
             // 接口请求成功
-            alert("接口请求成功");
-        }else{c
+            let records = d.data;
+            if (records.length == 0) {
+                        Toast.fail("暂无横机列表");
+                        return;
+            }
+            // 赋值横机列表machineList
+            records.map(item => {
+                
+                _this.machineList = [];
+                records.map(item =>{
+                    let machineStatus = "";
+                    let colorClass = "";
+                    if(item.machineStatus == "4" ){
+                        machineStatus = "离线";
+                        colorClass = "statusTypeNotOnline";
+                    }else if(item.machineStatus == "0"){
+                        machineStatus = "关机";
+                        colorClass = "statusTypeShutDown";
+                    }else if(item.machineStatus == "1"){
+                        machineStatus = "运行中...";
+                        colorClass = "statusTypeRunning";
+                    }else if(item.machineStatus == "2"){
+                        machineStatus = "暂停中...";
+                        colorClass = "statusTypePending";
+                    }else if(item.machineStatus == "3"){
+                        machineStatus = "报警中...";
+                        colorClass = "statusTypeError";
+                    }
+                    _this.machineList.push(
+                        {
+                        "machineName":item.machineName,
+                        "machineStatus":machineStatus,
+                        "machineOpenTime":item.machineOpenTime,
+                        "machineColorStatus":colorClass
+                        }
+                    )
+                });
+            });
+            Toast.success('刷新成功');
+        }else{
             // 接口请求失败
-            alert("接口请求失败");
+            Toast.fail('未连接');
         }
     });
     // 返回刷新成功
       this.isLoading = false;
   }
   },
+
 }
 </script>
 
@@ -98,6 +144,30 @@ export default {
     font-size: 16px;
     line-height: inherit;
     }
+
+    /* 运行状态 */
+    .statusTypeRunning{
+        background-color:#e9fae1;
+    }
+
+    /* 报警状态 */
+    .statusTypeError{
+        background-color:#ffdbdb;
+    }
+    /* 暂停状态 */
+    .statusTypePending{
+        background-color:#fdf3e4;
+    }
+    /* 关机状态 */
+    .statusTypeShutDown{
+        background-color: darkgrey;
+    }
+
+    /* 离线状态 */
+    .statusTypeNotOnline{
+        background-color: ;
+    }
+    
     
 </style>
 
