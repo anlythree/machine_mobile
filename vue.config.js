@@ -3,7 +3,7 @@
  * @Autor: anlythree
  * @Date: 2020-11-30 17:03:33
  * @LastEditors: anlythree
- * @LastEditTime: 2020-11-30 17:52:20
+ * @LastEditTime: 2020-12-01 09:38:15
  */
 // 获取当前时间搓 下面打包时生成文件名 清除浏览器缓存用
 const Timestamp = new Date().getTime();
@@ -49,14 +49,14 @@ module.exports = {
     },
     // webpack-dev-server 相关配置
     devServer: {
-        host: 'localhost', // 服务器的主机IP
+        host: '127.0.0.1', // 服务器的主机IP
         port: 8001, // 端口
         https: false,
         open: true, // 项目运行时自动在浏览器打开
         hotOnly: false, //  构建失败是回退
         proxy: { // 设置代理
             '/api': {
-                target: 'http://103.72.146.31',
+                target: 'http://103.72.146.31:8001',
                 pathRewrite: {
                     "^/api": ""
                 }, // 替换 'api' 为 "/"

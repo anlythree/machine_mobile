@@ -3,7 +3,7 @@
  * @Autor: anlythree
  * @Date: 2020-11-21 13:34:24
  * @LastEditors: anlythree
- * @LastEditTime: 2020-11-30 17:43:55
+ * @LastEditTime: 2020-12-01 09:41:30
 -->
 
 
@@ -62,7 +62,7 @@ export default {
         if(d.code == 0){
             // 接口请求成功
             alert("接口请求成功");
-        }else{
+        }else{c
             // 接口请求失败
             alert("接口请求失败");
         }
